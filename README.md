@@ -17,4 +17,17 @@ boot from-cljsjs cljs -O advanced -c "{:pseudo-names false}"
 equally it works if you remove Reagent:
 
 ```
+mv src/cljs/test_app/app.cljs reagent.cljs
+mv simple-ns.cljs src/cljs/test_app/app.cljs
+boot reload cljs -O advanced -c "{:pseudo-names false}"
 ```
+
+(Get back to the original state quickly with: `git checkout simple-ns.cljs src/; rm reagent.cljs`)
+
+### Fixes
+
+Adding a `cljs.edn` file fixes the issue. I assume since then not
+all .cljs namespaces are loaded anymore.
+
+Also compiling with `:pseudo-names true` fixes it but that's not
+really an acceptable solution.
