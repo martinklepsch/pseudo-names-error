@@ -26,8 +26,10 @@ boot reload cljs -O advanced -c "{:pseudo-names false}"
 
 ### Fixes
 
-Adding a `cljs.edn` file fixes the issue. I assume since then not
-all .cljs namespaces are loaded anymore.
+Adding a `cljs.edn` file fixes the issue. When no `cljs.edn` file is present
+it is generated and will [load all cljs namespaces](https://github.com/adzerk/boot-cljs/blob/master/src/adzerk/boot_cljs.clj#L77-L78).
+I assume that one of the then loaded namespaces causes the issue.
+(That's triggered by Reagent and `reload` is surprising still.)
 
 Also compiling with `:pseudo-names true` fixes it but that's not
 really an acceptable solution.
