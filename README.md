@@ -22,7 +22,7 @@ mv simple-ns.cljs src/cljs/test_app/app.cljs
 boot reload cljs -O advanced -c "{:pseudo-names false}"
 ```
 
-(Get back to the original state quickly with: `git checkout simple-ns.cljs src/; rm reagent.cljs`)
+(Restore original state: `git checkout simple-ns.cljs src/; rm reagent.cljs`)
 
 ### Fixes
 
