@@ -14,7 +14,7 @@ after removing the `reload` task it works:
 boot from-cljsjs cljs -O advanced -c "{:pseudo-names false}"
 ```
 
-equally it works if you remove Reagent:
+equally it works if you remove Reagent (not that `reload` task is used):
 
 ```
 mv src/cljs/test_app/app.cljs reagent.cljs
