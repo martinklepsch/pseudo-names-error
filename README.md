@@ -1,3 +1,11 @@
+**TLDR;** If you encounter problems that magically disappear as soon
+as you set `:pseudo-names true` it's likely that the problems arise
+from a name clash between your code and other JS on the page.  The
+ClojureScript compiler provides an `:output-wrapper` option that wraps
+your code in a closure and therefore mitigates that problem.  More
+information in the
+[ClojureScript Wiki](https://github.com/clojure/clojurescript/wiki/Compiler-Options#output-wrapper).
+
 ## Wierd pseudo-names error:
 
 To reproduce:
